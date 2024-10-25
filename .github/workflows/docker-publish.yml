@@ -86,9 +86,9 @@ jobs:
         push: ${{ github.event_name != 'pull_request' }}
         tags: |
           ${{ steps.meta.outputs.tags }}
-          ghcr.io/taskmedia/kubectl-gpg-ftp:latest
-          fty4/kubectl-gpg-ftp:main
-          fty4/kubectl-gpg-ftp:latest
+          ghcr.io/taskmedia/kubectl-gpg-ncftp:latest
+          fty4/kubectl-gpg-ncftp:main
+          fty4/kubectl-gpg-ncftp:latest
         labels: ${{ steps.meta.outputs.labels }}
         cache-from: type=gha
         cache-to: type=gha,mode=max
