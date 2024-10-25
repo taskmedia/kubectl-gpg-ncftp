@@ -13,4 +13,4 @@ USER root
 
 RUN apt update && apt install --yes gpg ncftp
 
-USER 1001
+USER 65534 # nobody
