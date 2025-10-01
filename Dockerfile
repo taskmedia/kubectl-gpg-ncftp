@@ -1,4 +1,4 @@
-FROM bitnami/kubectl
+FROM alpine:3.20
 
 # Image annotations
 # see: https://github.com/opencontainers/image-spec/blob/main/annotations.md#pre-defined-annotation-keys
@@ -9,9 +9,8 @@ LABEL org.opencontainers.image.source=https://github.com/taskmedia/kubectl-gpg-n
 LABEL org.opencontainers.image.vendor=task.media
 LABEL org.opencontainers.image.licenses=MIT
 
-USER root
-
-RUN apt update && apt install --yes gpg ncftp
+# Install deps
+RUN apk add --no-cache curl ca-certificates bash jq tar kubectl gpg ncftp
 
 # nobody
 USER 65534
